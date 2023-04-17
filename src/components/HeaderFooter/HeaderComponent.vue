@@ -27,6 +27,7 @@
                     <div class="navbar-nav ms-auto">
                         <router-link to="/" class="nav-item nav-link">Home</router-link>
                         <router-link to="/about" class="nav-item nav-link">About</router-link>
+                        <router-link to="/agents" class="nav-item nav-link">Agents</router-link>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
                             <div class="dropdown-menu rounded-0 m-0">
