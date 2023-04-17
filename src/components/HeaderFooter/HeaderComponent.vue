@@ -42,7 +42,7 @@
                                 <a href="404.html" class="dropdown-item">404 Error</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <router-link to="/contact" class="nav-item nav-link">Contact</router-link>
                     </div>
                     <a href="" class="btn btn-primary px-3 d-none d-lg-flex">Add Property</a>
                 </div>
