@@ -1,7 +1,5 @@
 <template>
-  <div>
-    
-    <div class="container-xxl bg-white p-0">
+  <div class="container-xxl bg-white p-0">
         <!-- Spinner Start -->
         <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -57,21 +55,29 @@
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
                 <div class="col-md-6 p-5 mt-lg-5">
                     <h1 class="display-5 animated fadeIn mb-4">Find A <span class="text-primary">Perfect Home</span> To Live With Your Family</h1>
-                    <p class="animated fadeIn mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet
-                        sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+                    <p class="animated fadeIn mb-4 pb-2">Welcome to Jhome Realty, where finding your dream home is our top priority. 
+                    </p>
                     <a href="" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Get Started</a>
                 </div>
                 <div class="col-md-6 animated fadeIn">
-                    <img class="img-fluid" src="../../assets/img/header.jpg" alt="">
+                    <img class="img-fluid" src="../../assets/img/carousel-1.jpg" alt="">
+                </div>
+                <div class="col-md-6 animated fadeIn">
+                    <div class="owl-carousel header-carousel">
+                        <div class="owl-carousel-item">
+                            <img class="img-fluid" src="../../assets/img/carousel-1.jpg" alt="">
+                        </div>
+                        <div class="owl-carousel-item">
+                            <img class="img-fluid" src="../../assets/img/carousel-2.jpg" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
         <!-- Header End -->
 
-
-        <!-- Search Start -->
-        <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
+         <!-- Search Start -->
+         <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
             <div class="container">
                 <div class="row g-2">
                     <div class="col-md-10">
@@ -103,9 +109,9 @@
                 </div>
             </div>
         </div>
-        <!-- Search End -->
-  </div>
 
+        <!-- Search End -->
+    </div>
 </template>
 
 <script>
