@@ -42,8 +42,6 @@
             <router-link to="/agents" class="nav-item nav-link"
               >Agents</router-link
             >
-            <router-link to="/admin" class="nav-item nav-link"
-              ></router-link>
             <div class="nav-item dropdown">
               <a
                 href="#"
