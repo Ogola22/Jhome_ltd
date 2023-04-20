@@ -39,6 +39,7 @@
             <router-link to="/about" class="nav-item nav-link"
               >About</router-link
             >
+            <router-link to="/services" class="nav-item nav-link">Services</router-link>
             <router-link to="/agents" class="nav-item nav-link"
               >Agents</router-link
             >
@@ -77,9 +78,8 @@
               >Contact</router-link
             >
           </div>
-          <a href="" class="btn btn-primary px-3 d-none d-lg-flex"
-            >Add Property</a
-          >
+          <router-link to="" class="btn btn-primary px-3 d-none d-lg-flex"
+            >Add Property </router-link>
         </div>
       </nav>
     </div>

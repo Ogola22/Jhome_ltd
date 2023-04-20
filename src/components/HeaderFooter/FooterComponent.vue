@@ -8,7 +8,7 @@
                         <h5 class="text-white mb-4">Get In Touch</h5>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>00100, West Point, Nairobi</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>0700458981</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>jthomes.co.ke</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@jthomes.co.ke</p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -18,11 +18,11 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-white mb-4">Quick Links</h5>
-                        <a class="btn btn-link text-white-50" href="">About Us</a>
-                        <a class="btn btn-link text-white-50" href="">Contact Us</a>
-                        <a class="btn btn-link text-white-50" href="">Our Services</a>
-                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
-                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                        <router-link to="/about" class="btn btn-link text-white-50">About Us</router-link>
+                        <router-link to="/contact" class="btn btn-link text-white-50">Contact Us</router-link>
+                        <router-link to="/services" class="btn btn-link text-white-50">Our Services</router-link>
+                       
+                        <router-link to="/terms" class="btn btn-link text-white-50">Terms & Condition</router-link>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-white mb-4">Photo Gallery</h5>
@@ -63,12 +63,12 @@
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                             &copy; <a class="border-bottom" href="#">Jhome Ltd</a>, All Right Reserved. 
 							
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+							
 							Designed By <a class="border-bottom" href="#">Brian Ogola</a>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
-                                <a href="">Home</a>
+                                <router-link to="/">Home</router-link>
                                 <a href="">Cookies</a>
                                 <a href="">Help</a>
                                 <a href="">FQAs</a>
@@ -79,6 +79,7 @@
             </div>
         </div>
         <!-- Footer End -->
+
   </div>
 </template>
 
