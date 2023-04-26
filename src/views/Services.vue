@@ -1,10 +1,11 @@
 <template>
-  <div class="container-xxl bg-white p-0">
+ <!-- services -->
+<div class="container-xxl bg-white p-0">
     <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h1 class="mb-3">Our Services</h1>
-                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+                    <p>We provide the following Real Estate Services</p>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -14,7 +15,7 @@
                                     <img class="img-fluid" src="../../src/assets/img/icon-apartment.png" alt="Icon">
                                 </div>
                                 <h6>Apartment</h6>
-                                <span>123 Properties</span>
+                                <span>10 Properties</span>
                             </div>
                         </a>
                     </div>
@@ -25,7 +26,7 @@
                                     <img class="img-fluid" src="../../src/assets/img/icon-villa.png" alt="Icon">
                                 </div>
                                 <h6>Villa</h6>
-                                <span>123 Properties</span>
+                                <span>20 Available</span>
                             </div>
                         </a>
                     </div>
@@ -36,7 +37,7 @@
                                     <img class="img-fluid" src="../../src/assets/img/icon-house.png" alt="Icon">
                                 </div>
                                 <h6>Home</h6>
-                                <span>123 Properties</span>
+                                <span>10 Availabe</span>
                             </div>
                         </a>
                     </div>
@@ -47,7 +48,7 @@
                                     <img class="img-fluid" src="../../src/assets/img/icon-housing.png" alt="Icon">
                                 </div>
                                 <h6>Office</h6>
-                                <span>123 Properties</span>
+                                <span>30 Available</span>
                             </div>
                         </a>
                     </div>
@@ -58,7 +59,7 @@
                                     <img class="img-fluid" src="../../src/assets/img/icon-building.png" alt="Icon">
                                 </div>
                                 <h6>Building</h6>
-                                <span>123 Properties</span>
+                                <span>10 Properties</span>
                             </div>
                         </a>
                     </div>
@@ -69,7 +70,7 @@
                                     <img class="img-fluid" src="../../src/assets/img/icon-neighborhood.png" alt="Icon">
                                 </div>
                                 <h6>Townhouse</h6>
-                                <span>123 Properties</span>
+                                <span>20 Properties</span>
                             </div>
                         </a>
                     </div>
@@ -80,7 +81,7 @@
                                     <img class="img-fluid" src="../../src/assets/img/icon-condominium.png" alt="Icon">
                                 </div>
                                 <h6>Shop</h6>
-                                <span>123 Properties</span>
+                                <span>12 Properties</span>
                             </div>
                         </a>
                     </div>
@@ -91,7 +92,7 @@
                                     <img class="img-fluid" src="../../src/assets/img/icon-luxury.png" alt="Icon">
                                 </div>
                                 <h6>Garage</h6>
-                                <span>123 Properties</span>
+                                <span>5 Available</span>
                             </div>
                         </a>
                     </div>
@@ -99,7 +100,7 @@
             </div>
         </div>
     </div>
-        <!-- Category End -->
+        <!-- services End -->
 </template>
 
 <script>
