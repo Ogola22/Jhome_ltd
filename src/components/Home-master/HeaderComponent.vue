@@ -79,7 +79,7 @@
             >
           </div>
           <router-link to="" class="btn btn-primary px-3 d-none d-lg-flex"
-            >Add Property </router-link>
+            >Login </router-link>
         </div>
       </nav>
     </div>
@@ -98,7 +98,7 @@
             priority.
           </p>
           <a href="" class="btn btn-primary py-3 px-5 me-3 animated fadeIn"
-            >Get Started</a
+            >Join us</a
           >
         </div>
         <div class="col-md-6 animated fadeIn">
