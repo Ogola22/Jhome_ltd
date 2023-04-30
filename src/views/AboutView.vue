@@ -3,6 +3,7 @@
     <!-- About Start -->
     <div class="container-xxl py-5">
             <div class="container">
+                <h3 class="mb-4">Who Are We?</h3>
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                         <div class="about-img position-relative overflow-hidden p-5 pe-0">
@@ -10,7 +11,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                        <h1 class="mb-4">#1 Place To Find The Perfect Property</h1>
+                        <h3 class="mb-4">#1 Place To Find The Perfect Property</h3>
                         <p class="mb-4">
                             Welcome to Jhomes Ltd, your trusted real estate agency. We are a team of experienced real estate professionals dedicated to helping you find your dream home, sell your property or invest in real estate.</p>
                         <p><i class="fa fa-check text-primary me-3"></i>At Jhomes Ltd, we pride ourselves on our commitment to exceptional customer service. We understand that buying or selling a property can be a complex and emotional process, which is why we are here to guide you every step of the way. Our team is knowledgeable, friendly and passionate about real estate, and we always put our clients' needs first.</p>

@@ -4,12 +4,16 @@
             <div class="col-left">
                 <div class="login-form">
                     <h2>Login</h2>
-                    <form>
+                    <form @submit.prevent="handleLogin">
                         <p>
-                            <input type="email" placeholder="Email" required>
+                            <input type="email" placeholder="Email" required
+                            v-model="form.email"
+                            >
                         </p>
                         <p>
-                            <input type="password" placeholder="Password" required>
+                            <input type="password" placeholder="Password" required
+                            v-model="form.password"
+                            >
                         </p>
                         <p>
                             <input class="btn" type="submit" value="Sing In" />
@@ -37,6 +41,20 @@
 </template>
 
 <script>
+import { ref } from 'vue'
+import axios from 'axios'
+
+const form = ref({
+    'email': '',
+    'password': ''
+})
+
+const handleLogin = async () =>{
+    await axios.post('/login', {
+        email: form.value.email,
+        password: form.value.password
+    })
+}
 export default {};
 </script>
 
