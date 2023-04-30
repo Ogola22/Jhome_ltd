@@ -78,7 +78,7 @@
               >Contact</router-link
             >
           </div>
-          <router-link to="" class="btn btn-primary px-3 d-none d-lg-flex"
+          <router-link to="/login" class="btn btn-primary px-3 d-none d-lg-flex"
             >Login </router-link>
         </div>
       </nav>
@@ -97,9 +97,10 @@
             Welcome to Jhome Realty, where finding your dream home is our top
             priority.
           </p>
-          <a href="" class="btn btn-primary py-3 px-5 me-3 animated fadeIn"
-            >Join us</a
-          >
+          <router-link to="/register" class="btn btn-primary py-3 px-5 me-3 animated fadeIn"
+            >Join us
+          </router-link>
+          
         </div>
         <div class="col-md-6 animated fadeIn">
           <img class="img-fluid" src="../../assets/img/carousel-1.jpg" alt="" />
