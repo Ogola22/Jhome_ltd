@@ -4,19 +4,24 @@
             <div class="col-left">
                 <div class="login-form">
                     <h2>Login</h2>
-                    <form @submit.prevent="handleLogin">
+                    <form @submit.prevent>
                         <p>
-                            <input type="email" placeholder="Email" required
-                            v-model="form.email"
+                            <input 
+                            type="email" placeholder="Email" required
+                            name="email"
+                            v-model="user.email"
                             >
                         </p>
                         <p>
-                            <input type="password" placeholder="Password" required
-                            v-model="form.password"
+                            <input 
+                            type="password" placeholder="Password" required
+                            name="password"
+                            v-moeel="user.password"
+                           
                             >
                         </p>
                         <p>
-                            <input class="btn" type="submit" value="Sing In" />
+                            <input class="btn" type="submit" @click="login()" value="Sing In" />
                         </p>
                         <p>
                             <router-link to="">Forget Password?</router-link>
@@ -41,21 +46,36 @@
 </template>
 
 <script>
-import { ref } from 'vue'
-import axios from 'axios'
+import { useAuthStore } from '../../stores/auth';
+export default {
 
-const form = ref({
-    'email': '',
-    'password': ''
-})
+setup(){
+    let userStore=useAuthStore();
+    return {
+        userStore
+    };
 
-const handleLogin = async () =>{
-    await axios.post('/login', {
-        email: form.value.email,
-        password: form.value.password
-    })
+ },
+    data () {
+        return {
+            user: {
+                email: "",
+                password: null,
+                created_at: null,
+                updated_at: null
+
+            }
+        }
+    },
+    methods: {
+        login() {
+            this.userStore.user = this.user;
+            this.userStore.loginUser();
+            this.$router.replace('/');
+        }
+    }
+    
 }
-export default {};
 </script>
 
 <style>

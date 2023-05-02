@@ -1,12 +1,5 @@
 <template>
   <div class="container-xxl bg-white p-0">
-    <!-- Spinner Start -->
-    <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div> -->
-    <!-- Spinner End -->
 
     <!-- Navbar Start -->
     <div class="container-fluid nav-bar bg-transparent">
@@ -77,9 +70,9 @@
             <router-link to="/contact" class="nav-item nav-link"
               >Contact</router-link
             >
+            <router-link to="/login" class="nav-item nav-link">Login </router-link>
           </div>
-          <router-link to="/login" class="btn btn-primary px-3 d-none d-lg-flex"
-            >Login </router-link>
+          
         </div>
       </nav>
     </div>
@@ -158,5 +151,4 @@
 <script>
 export default {};
 </script>
-
 <style></style>

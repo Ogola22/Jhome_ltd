@@ -1,49 +1,78 @@
 <template>
   <div class="wrapper1 login-2">
-      <div class="container1">
-          <div class="col-left">
-              <div class="login-form">
-                  <h2>Register</h2>
-                  <form>
-                      <p>
-                          <input type="text" placeholder="First name" required>
-                      </p>
-                      <p>
-                          <input type="text" placeholder="Last name" required>
-                      </p>
-                      <p>
-                          <input type="email" placeholder="Email" required>
-                      </p>
-                      <p>
-                          <input type="password" placeholder="Password" required>
-                      </p>
-                      <p>
-                          <input type="password" placeholder="Confirm password" required>
-                      </p>
-                      <p>
-                          <input class="btn" type="submit" value="Sign Up" />
-                      </p>
-                      <p>
-                        Already have an account?<router-link to="/login"> Login</router-link>
-                      </p>
-                  </form>
+    <div class="container1">
+      <div class="col-left">
+        <div class="login-form">
+          <h2>Register</h2>
+          <form @submit.prevent>
+            <p>
+              <input type="text" placeholder="Name" required v-model="user.name">
+            </p>
+            <p>
+              <input type="email" placeholder="Email" required v-model="user.email">
+            </p>
+            <p>
+              <input type="password" placeholder="Password" required v-model="user.password">
+            </p>
+            <p>
+              <input type="password" placeholder="Confirm password" required v-model="user.password_confirmation">
+            </p>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-3">
+                <button class="btn btn-primary" @click="register()">Register</button>
               </div>
-          </div>
-          <div class="col-right">
-              <div class="login-social">
-                  <h2>Sign Up with</h2>
-                  <router-link to="" class="btn btn-go">Google</router-link>
-                  <router-link to="" class="btn btn-fb">Facebook</router-link>
-                  <router-link to="" class="btn btn-tw">Twitter</router-link>
-              </div>
-          </div>
+            </div>
+            <p>
+              Already have an account?<router-link to="/login"> Login</router-link>
+            </p>
+          </form>
+        </div>
       </div>
+      <div class="col-right">
+        <div class="login-social">
+          <h2>Sign Up with</h2>
+          <router-link to="" class="btn btn-go">Google</router-link>
+          <router-link to="" class="btn btn-fb">Facebook</router-link>
+          <router-link to="" class="btn btn-tw">Twitter</router-link>
+        </div>
+      </div>
+    </div>
 
   </div>
 </template>
 
 <script>
-export default {};
+import { useAuthStore } from '../../stores/auth';
+export default {
+  setup() {
+    let userStore = useAuthStore();
+    return {
+      userStore
+    };
+
+  },
+  data() {
+    return {
+      user: {
+        name: "",
+        email: "",
+        password: null,
+        password_confirmation: null,
+        created_at: null,
+        updated_at: null
+
+      }
+    }
+  },
+  methods: {
+    register() {
+      this.userStore.user = this.user;
+      this.userStore.registerUser();
+      this.$router.replace('/login');
+    }
+  }
+
+};
 </script>
 
 <style>
@@ -119,20 +148,20 @@ div.register a {
 
 @media(max-width: 575.98px) {
   .login-2 .container1 {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .login-2 .col-left,
   .login-2 .col-right {
-      width: 100%;
-      margin: 0;
-      padding: 30px;
-      -webkit-clip-path: none;
-      clip-path: none;
+    width: 100%;
+    margin: 0;
+    padding: 30px;
+    -webkit-clip-path: none;
+    clip-path: none;
   }
 
   .login-2 .col-right {
-      padding-top: 0;
+    padding-top: 0;
   }
 }
 
