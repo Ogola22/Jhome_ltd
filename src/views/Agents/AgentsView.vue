@@ -19,7 +19,7 @@
                             </div>
                         </div>
                         <div class="text-center p-4 mt-3">
-                            <h5 class="fw-bold mb-0">Full Name</h5>
+                            <h5 class="fw-bold mb-0">Brian Ogola</h5>
                             <router-link to="/agentDetails" class="nav-item nav-link">View Agent Details</router-link>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="text-center p-4 mt-3">
-                            <h5 class="fw-bold mb-0">Full Name</h5>
+                            <h5 class="fw-bold mb-0">Brian Ogola</h5>
                             <router-link to="/agentDetails" class="nav-item nav-link">View Agent Details</router-link>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                             </div>
                         </div>
                         <div class="text-center p-4 mt-3">
-                            <h5 class="fw-bold mb-0">Full Name</h5>
+                            <h5 class="fw-bold mb-0">Brian Ogola</h5>
                             <router-link to="/agentDetails" class="nav-item nav-link">View Agent Details</router-link>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <div class="text-center p-4 mt-3">
-                            <h5 class="fw-bold mb-0">Full Name</h5>
+                            <h5 class="fw-bold mb-0">Brian Ogola</h5>
                             <router-link to="/agentDetails" class="nav-item nav-link">View Agent Details</router-link>
                         </div>
                     </div>

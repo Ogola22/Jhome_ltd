@@ -64,7 +64,7 @@
                             &copy; <a class="border-bottom" href="#">Jhome Ltd</a>, All Right Reserved. 
 							
 							
-							Designed By <a class="border-bottom" href="#">Brian Ogola</a>
+							Designed By <a class="border-bottom" href="https://brian-ogola.netlify.app/">Brian Ogola</a>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">

@@ -24,22 +24,17 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <i class="fi flaticon-house"></i>
-                                    <span>My Properties</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
+                                <router-link to="/myProperties">
                                     <i class="far fa-heart"></i>
-                                    <span>Favorited Properties</span>
-                                </a>
+                                    <span>Properties</span>
+                                </router-link>
                             </li>
                             <li>
-                                <a href="#">
+                                <router-link to="/addProperty">
                                     <i class="fa fa-plus"></i>
                                     <span>Submit Property</span>
-                                </a>
+                                </router-link>
+                            
                             </li>
                             <li>
                                 <a href="#">
@@ -105,7 +100,7 @@
                                             <div class="form-group">
                                                 <label for="itemN-5">Current Password</label>
                                                 <input type="password" class="form-control"
-                                                    placeholder="www.facebook.com/PolygonTheme" id="itemN-5">
+                                                    placeholder="Enter your current password" id="itemN-5">
                                             </div>
                                         </div>
                                     </div>
@@ -113,14 +108,14 @@
                                         <div class="col-xs-12 col-md-6">
                                             <div class="form-group">
                                                 <label for="itemN-6">New Password</label>
-                                                <input type="password" class="form-control" placeholder="PolygonTheme"
+                                                <input type="password" class="form-control" placeholder="Enter new password"
                                                     id="itemN-6">
                                             </div>
                                         </div>
                                         <div class="col-xs-12 col-md-6">
                                             <div class="form-group">
                                                 <label for="itemN-7">Confirm New Password</label>
-                                                <input type="password" class="form-control" placeholder="PolygonTheme"
+                                                <input type="password" class="form-control" placeholder="Confirm new password"
                                                     id="itemN-7">
                                             </div>
                                         </div>
@@ -144,13 +139,13 @@
                                             <div class="form-group">
                                                 <label for="itemN-8">Facebook URL</label>
                                                 <input type="text" class="form-control"
-                                                    placeholder="www.facebook.com/PolygonTheme" id="itemN-8">
+                                                    id="itemN-8">
                                             </div>
                                         </div>
                                         <div class="col-xs-12 col-md-6">
                                             <div class="form-group">
                                                 <label for="itemN-9">Twitter URL</label>
-                                                <input type="text" class="form-control" placeholder="PolygonTheme"
+                                                <input type="text" class="form-control"
                                                     id="itemN-9">
                                             </div>
                                         </div>
@@ -159,14 +154,14 @@
                                         <div class="col-xs-12 col-md-6">
                                             <div class="form-group">
                                                 <label for="itemN-10">Linkedin URL</label>
-                                                <input type="text" class="form-control" placeholder="PolygonTheme"
+                                                <input type="text" class="form-control" 
                                                     id="itemN-10">
                                             </div>
                                         </div>
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="form-group">
                                                 <label for="itemN-11">Instagram URL</label>
-                                                <input type="text" class="form-control" placeholder="PolygonTheme"
+                                                <input type="text" class="form-control"
                                                     id="itemN-11">
                                             </div>
                                         </div>
@@ -175,14 +170,14 @@
                                         <div class="col-xs-12 col-md-6">
                                             <div class="form-group">
                                                 <label for="itemN-12">Google Plus URL</label>
-                                                <input type="text" class="form-control" placeholder="PolygonTheme"
+                                                <input type="text" class="form-control"
                                                     id="itemN-12">
                                             </div>
                                         </div>
                                         <div class="col-xs-12 col-md-6">
                                             <div class="form-group">
                                                 <label for="itemN-13">Skype</label>
-                                                <input type="text" class="form-control" placeholder="PolygonTheme"
+                                                <input type="text" class="form-control"
                                                     id="itemN-13">
                                             </div>
                                         </div>

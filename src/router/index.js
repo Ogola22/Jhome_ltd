@@ -50,7 +50,32 @@ const router = createRouter({
       path: '/agentDetails',
       name: 'agentDetails',
       component: ()=> import('../views/Agents/AgentDetail.vue')
-    }
+    },
+    {
+      path: '/myProperties',
+      name: 'myProperties',
+      component: ()=> import('../views/property/myProperty.vue')
+    },
+    {
+      path: '/addProperty',
+      name: 'addProperty',
+      component: ()=> import('../views/property/AddProperty/Step1.vue')
+    },
+    {
+      path: '/step2',
+      name: 'step2',
+      component: ()=> import('../views/property/AddProperty/Step2.vue')
+    },
+    {
+      path: '/step3',
+      name: 'step3',
+      component: ()=> import('../views/property/AddProperty/Step3.vue')
+    },
+    {
+      path: '/step4',
+      name: 'step4',
+      component: ()=> import('../views/property/AddProperty/Step4.vue')
+    },
   ]
 })
 export default router
