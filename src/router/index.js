@@ -23,7 +23,7 @@ const router = createRouter({
     {
       path: '/agents',
       name: 'agents',
-      component: ()=> import('../views/AgentsView.vue')
+      component: ()=> import('../views/Agents/AgentsView.vue')
     },
     {
       path: '/services',
@@ -40,7 +40,17 @@ const router = createRouter({
       name: 'register',
       component: ()=> import('../views/Auths/Register.vue')
     },
-    
+
+    {
+      path: '/profile',
+      name: 'profile',
+      component: ()=> import('../views/users/userProfile.vue')
+    },
+    {
+      path: '/agentDetails',
+      name: 'agentDetails',
+      component: ()=> import('../views/Agents/AgentDetail.vue')
+    }
   ]
 })
 export default router

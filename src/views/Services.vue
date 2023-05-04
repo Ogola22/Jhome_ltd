@@ -1,6 +1,7 @@
 <template>
  <!-- services -->
-<div class="container-xxl bg-white p-0">
+ 
+<div id="services" class="container-xxl bg-white p-0">
     <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">

@@ -71,6 +71,7 @@
               >Contact</router-link
             >
             <router-link to="/login" class="nav-item nav-link">Login </router-link>
+            <router-link to="/profile" class="nav-item nav-link">Profile</router-link>
           </div>
           
         </div>
