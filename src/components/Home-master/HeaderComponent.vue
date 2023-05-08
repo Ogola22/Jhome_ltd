@@ -64,6 +64,7 @@
               >
               <div class="dropdown-menu rounded-0 m-0">
                 <router-link to="/blogs" class="dropdown-item">Blogs</router-link>
+                <router-link to="/membership" class="dropdown-item">Membership</router-link>
                 <a href="404.html" class="dropdown-item">404 Error</a>
               </div>
             </div>
