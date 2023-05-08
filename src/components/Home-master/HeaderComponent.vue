@@ -44,11 +44,11 @@
                 >Property</a
               >
               <div class="dropdown-menu rounded-0 m-0">
-                <a href="property-list.html" class="dropdown-item"
-                  >Property List</a
+                <router-link to="/propertyList" class="dropdown-item"
+                  >Property List</router-link
                 >
                 <a href="property-type.html" class="dropdown-item"
-                  >Property Type</a
+                  >Property grid</a
                 >
                 <a href="property-agent.html" class="dropdown-item"
                   >Property Agent</a
@@ -63,7 +63,7 @@
                 >Pages</a
               >
               <div class="dropdown-menu rounded-0 m-0">
-                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                <router-link to="/blogs" class="dropdown-item">Blogs</router-link>
                 <a href="404.html" class="dropdown-item">404 Error</a>
               </div>
             </div>

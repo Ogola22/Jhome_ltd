@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h1 class="mb-3">Contact Us</h1>
-                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+                    <p>Please note we do not sell houses, we are an advertising platform. For any questions regarding a listing please contact the real estate agent who has placed the property ad.</p>
                 </div>
                 <div class="row g-4">
                     <div class="col-12">
@@ -43,11 +43,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-md-7 wow fadeInUp" data-wow-delay="0.1s">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15955.401124903454!2d36.8069627!3d-1.2621655!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f17140770e9c5%3A0x5419c21a12dda63!2sWest%20point%20building%20Mpaka%20road!5e0!3m2!1sen!2ske!4v1681766321635!5m2!1sen!2ske"
                          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <div class="wow fadeInUp" data-wow-delay="0.5s">
                             <p class="mb-4">We are a phone call away, or better still you can cantact us through our email. We are glad to have you here.</p>  
                                 

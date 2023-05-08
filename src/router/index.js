@@ -62,6 +62,11 @@ const router = createRouter({
       component: ()=> import('../views/property/AddProperty/Step1.vue')
     },
     {
+      path: '/editProperty',
+      name: 'editProperty',
+      component: ()=> import('../views/property/editProperty.vue')
+    },
+    {
       path: '/step2',
       name: 'step2',
       component: ()=> import('../views/property/AddProperty/Step2.vue')
@@ -75,6 +80,21 @@ const router = createRouter({
       path: '/step4',
       name: 'step4',
       component: ()=> import('../views/property/AddProperty/Step4.vue')
+    },
+    {
+      path: '/blogs',
+      name: 'blogs',
+      component: ()=> import('../views/Blogs/blogsDetails.vue')
+    },
+    {
+      path: '/propertyList',
+      name: 'propertyList',
+      component: ()=> import('../views/property/proprtyList.vue')
+    },
+    {
+      path: '/membership',
+      name: 'membership',
+      component: ()=> import('../views/MembershipView.vue')
     },
   ]
 })

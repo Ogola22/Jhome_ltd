@@ -15,8 +15,7 @@
                                 <div class="icon mb-3">
                                     <img class="img-fluid" src="../../src/assets/img/icon-apartment.png" alt="Icon">
                                 </div>
-                                <h6>Apartment</h6>
-                                <span>10 Properties</span>
+                                <h6>Apartments</h6>
                             </div>
                         </a>
                     </div>
@@ -27,7 +26,6 @@
                                     <img class="img-fluid" src="../../src/assets/img/icon-villa.png" alt="Icon">
                                 </div>
                                 <h6>Villa</h6>
-                                <span>20 Available</span>
                             </div>
                         </a>
                     </div>
@@ -37,8 +35,7 @@
                                 <div class="icon mb-3">
                                     <img class="img-fluid" src="../../src/assets/img/icon-house.png" alt="Icon">
                                 </div>
-                                <h6>Home</h6>
-                                <span>10 Availabe</span>
+                                <h6>Homes</h6>
                             </div>
                         </a>
                     </div>
@@ -48,8 +45,7 @@
                                 <div class="icon mb-3">
                                     <img class="img-fluid" src="../../src/assets/img/icon-housing.png" alt="Icon">
                                 </div>
-                                <h6>Office</h6>
-                                <span>30 Available</span>
+                                <h6>Offices</h6>
                             </div>
                         </a>
                     </div>
@@ -59,8 +55,7 @@
                                 <div class="icon mb-3">
                                     <img class="img-fluid" src="../../src/assets/img/icon-building.png" alt="Icon">
                                 </div>
-                                <h6>Building</h6>
-                                <span>10 Properties</span>
+                                <h6>Buildings</h6>
                             </div>
                         </a>
                     </div>
@@ -71,7 +66,6 @@
                                     <img class="img-fluid" src="../../src/assets/img/icon-neighborhood.png" alt="Icon">
                                 </div>
                                 <h6>Townhouse</h6>
-                                <span>20 Properties</span>
                             </div>
                         </a>
                     </div>
@@ -81,8 +75,7 @@
                                 <div class="icon mb-3">
                                     <img class="img-fluid" src="../../src/assets/img/icon-condominium.png" alt="Icon">
                                 </div>
-                                <h6>Shop</h6>
-                                <span>12 Properties</span>
+                                <h6>Shops</h6>
                             </div>
                         </a>
                     </div>
@@ -92,8 +85,7 @@
                                 <div class="icon mb-3">
                                     <img class="img-fluid" src="../../src/assets/img/icon-luxury.png" alt="Icon">
                                 </div>
-                                <h6>Garage</h6>
-                                <span>5 Available</span>
+                                <h6>Garages</h6>
                             </div>
                         </a>
                     </div>
