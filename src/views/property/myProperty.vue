@@ -39,13 +39,13 @@
                                                 alt=""></a>
                                     </div>
                                     <div class="textBox">
-                                        <h4 class="fontNeuron"><a href="properties-single1.html">Elegant studio flat</a>
+                                        <h4 class="fontNeuron"><a href="properties-single1.html">Jhomes Flats</a>
                                         </h4>
-                                        <address><i class="fi flaticon-pin-1"></i>The Village, Jersey City, NJ 07302, USA
+                                        <address>Rundah - 00100, Nairobi
                                         </address>
                                         <div class="priceArea">
-                                            <span class="price fontNeuron">$ 490,000</span>
-                                            <time class="date" datetime="2017-02-27">2/27/2017</time>
+                                            <span class="price fontNeuron">Ksh.50,000</span>
+                                            <time class="date" datetime="20023-06-7">7/6/2023</time>
                                         </div>
                                     </div>
                                 </div>

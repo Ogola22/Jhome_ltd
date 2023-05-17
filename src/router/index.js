@@ -67,21 +67,6 @@ const router = createRouter({
       component: ()=> import('../views/property/editProperty.vue')
     },
     {
-      path: '/step2',
-      name: 'step2',
-      component: ()=> import('../views/property/AddProperty/Step2.vue')
-    },
-    {
-      path: '/step3',
-      name: 'step3',
-      component: ()=> import('../views/property/AddProperty/Step3.vue')
-    },
-    {
-      path: '/step4',
-      name: 'step4',
-      component: ()=> import('../views/property/AddProperty/Step4.vue')
-    },
-    {
       path: '/blogs',
       name: 'blogs',
       component: ()=> import('../views/Blogs/blogsDetails.vue')
