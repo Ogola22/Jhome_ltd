@@ -19,8 +19,8 @@ export default {
         this.getProperty();
     },
     methods: {
-        getProperty() {
-            axios.get('http://127.0.0.1:8000/api/properties').then(res => {
+       async getProperty() {
+           await axios.get('http://127.0.0.1:8000/api/properties').then(res => {
                 this.properties = res.data;
                 console.log(res.data)
             })

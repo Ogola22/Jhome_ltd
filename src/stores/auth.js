@@ -5,10 +5,11 @@ export const useAuthStore = defineStore("auth", {
   state: () => {
     return {
       user: {
+        id: null,
         name: "",
         email: "",
-        password: null,
-        password_confirmation: null,
+        password: "",
+        password_confirmation: "",
         created_at: null,
         updated_at: null,
       },
@@ -17,19 +18,27 @@ export const useAuthStore = defineStore("auth", {
   },
   getters: {},
   actions: {
-    async loginUser() {
-      await axios.post("http://localhost:8000/api/login", this.user).then((res) => {
-        console.log(res);
-        this.user=res.data.user;
-        this.token=res.data.token;
-      });
-    },
+      async loginUser() {
+      await axios.post('login', this.user).then((response) => {
+          alert(response)
+          this.user = response.data.user;
+          this.token = response.data.token
+        }); 
+      },
+    
+
     async registerUser() {
-      await axios.post("http://localhost:8000/api/register", this.user).then((res) => {
-          console.log(res);
-        this.user=res.data.user;
-        this.token=res.data.token;
+      await axios.post('register', this.user).then((res) => {
+        alert(res.data)
+        console.log(res.data);
+        this.name = res.data.user;
       });
+     
+      
     },
+
+    async logoutUser() {
+      await axios.post('/logout');
+    }
   },
 });

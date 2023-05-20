@@ -4,7 +4,7 @@
             <div class="col-left">
                 <div class="login-form">
                     <h2>Login</h2>
-                    <form @submit.prevent>
+                    <form @submit.prevent="login()">
                         <p>
                             <input 
                             type="email" placeholder="Email" required
@@ -16,12 +16,12 @@
                             <input 
                             type="password" placeholder="Password" required
                             name="password"
-                            v-moeel="user.password"
+                            v-model="user.password"
                            
                             >
                         </p>
                         <p>
-                            <input class="btn" type="submit" @click="login()" value="Sing In" />
+                            <input class="btn" type="submit" value="Sing In" />
                         </p>
                         <p>
                             <router-link to="">Forget Password?</router-link>
@@ -48,22 +48,17 @@
 <script>
 import { useAuthStore } from '../../stores/auth';
 export default {
-
-setup(){
-    let userStore=useAuthStore();
-    return {
-        userStore
-    };
-
- },
-    data () {
+    setup(){
+        let userStore=useAuthStore();
+        return {
+            userStore
+        };
+     },
+    data() {
         return {
             user: {
                 email: "",
-                password: null,
-                created_at: null,
-                updated_at: null
-
+                password: "",
             }
         }
     },
@@ -72,10 +67,12 @@ setup(){
             this.userStore.user = this.user;
             this.userStore.loginUser();
             this.$router.replace('/');
-        }
-    }
-    
-}
+        }, 
+        
+    },
+
+
+};
 </script>
 
 <style>

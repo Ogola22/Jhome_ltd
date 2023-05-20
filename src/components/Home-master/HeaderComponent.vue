@@ -55,24 +55,20 @@
                 >
               </div>
             </div>
-            <div class="nav-item dropdown">
-              <a
-                href="#"
-                class="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-                >Pages</a
-              >
-              <div class="dropdown-menu rounded-0 m-0">
-                <router-link to="/blogs" class="dropdown-item">Blogs</router-link>
-                <router-link to="/membership" class="dropdown-item">Membership</router-link>
-                <a href="404.html" class="dropdown-item">404 Error</a>
-              </div>
-            </div>
             <router-link to="/contact" class="nav-item nav-link"
               >Contact</router-link
             >
-            <router-link to="/login" class="nav-item nav-link">Login </router-link>
+            <router-link to="/login" class="nav-item nav-link" v-if="!user.name">Login </router-link>
+            
             <router-link to="/profile" class="nav-item nav-link">Profile</router-link>
+            <div class="nav-item dropdown">
+              <div class="nav-link dropdown-toggle" data-bs-toggle="dropdown" ><i class="far fa-user"></i></div>
+              
+              <div class="dropdown-menu rounded-0 m-0">
+                <router-link to="" class="dropdown-item mb-3" v-if="user">Hi, <span>{{ user.name }}</span></router-link>
+                <button class="dropdown-item" @click="userStore.logoutUser" v-else><router-link to="" class="fa fa-sign-out-alt">Logout</router-link></button>
+              </div>
+            </div>
           </div>
           
         </div>
@@ -151,6 +147,29 @@
 </template>
 
 <script>
-export default {};
+import { useAuthStore } from '../../stores/auth';
+import axios from 'axios';
+export default {
+  setup() {
+    let userStore = useAuthStore();
+    return {
+      userStore
+    };
+
+  },
+  data() {
+    return {
+      user: {
+        name: null,
+        
+      }
+    }
+  },
+  async created() {
+    const response = await axios.get('user');
+    this.user = response.data;
+  },
+
+};
 </script>
 <style></style>

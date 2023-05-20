@@ -4,7 +4,7 @@
       <div class="col-left">
         <div class="login-form">
           <h2>Register</h2>
-          <form @submit.prevent>
+          <form @submit.prevent="register">
             <p>
               <input type="text" placeholder="Name" required v-model="user.name">
             </p>
@@ -19,7 +19,7 @@
             </p>
             <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-3">
-                <button class="btn btn-primary" @click="register()">Register</button>
+                <button class="btn btn-primary">Register</button>
               </div>
             </div>
             <p>
@@ -53,19 +53,17 @@ export default {
   },
   data() {
     return {
-      user: {
+      user:{
         name: "",
         email: "",
-        password: null,
-        password_confirmation: null,
-        created_at: null,
-        updated_at: null
-
-      }
+        password: "",
+        password_confirmation: "",
+       }
     }
   },
   methods: {
     register() {
+      alert(res.data)
       this.userStore.user = this.user;
       this.userStore.registerUser();
       this.$router.replace('/login');

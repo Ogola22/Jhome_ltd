@@ -69,8 +69,8 @@
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
                                 <router-link to="/">Home</router-link>
-                                <a href="">Cookies</a>
-                                <a href="">Help</a>
+                                <router-link to="/blogs">Blogs</router-link>
+                                <router-link to="/membership">Membership</router-link>
                                 <a href="">FQAs</a>
                             </div>
                         </div>

@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 
 import { createPinia } from 'pinia'
-
+import './axios'
 
 import App from './App.vue'
 
