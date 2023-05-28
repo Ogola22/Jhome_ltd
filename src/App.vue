@@ -1,18 +1,19 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router'
-import HeaderComponent from './components/Home-master/HeaderComponent.vue'
+// import HeaderComponent from './components/Home-master/HeaderComponent.vue'
 import FooterComponent from './components/Home-master/FooterComponent.vue'
+import NavbarComponent from './components/Home-master/NavbarComponent.vue';
 
 
 
 
 export default {
-  components: { HeaderComponent, FooterComponent},
+  components: { NavbarComponent, FooterComponent},
 }
 </script>
 
 <template>
-  <header-component></header-component>
+  <navbar-component></navbar-component>
     <RouterView />
   <footer-component></footer-component> 
 
