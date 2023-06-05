@@ -4,7 +4,7 @@
       <div class="col-left">
         <div class="login-form">
           <h2>Register</h2>
-          <form @submit.prevent="register">
+          <form @submit.prevent="register()">
             <p>
               <input type="text" placeholder="Name" required v-model="user.name">
             </p>
@@ -63,12 +63,12 @@ export default {
   },
   methods: {
     register() {
-      alert(res.data)
+      //alert(response.data)
       this.userStore.user = this.user;
       this.userStore.registerUser();
       this.$router.replace('/login');
-    }
-  }
+    },
+  },
 
 };
 </script>
