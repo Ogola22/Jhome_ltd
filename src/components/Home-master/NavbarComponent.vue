@@ -57,7 +57,8 @@
               <router-link to="/contact" class="nav-item nav-link"
                 >Contact</router-link
               >
-              <router-link to="/login" class="nav-item nav-link" v-if="!user.name">Login </router-link>
+              <router-link to="/login" class="nav-item nav-link" v-if="!userStore.token">Login </router-link>
+              <router-link to="/register" class="nav-item nav-link" v-if="!userStore.token">Register</router-link>
               
               <button class="dropdown-item" @click="userStore.logoutUser" v-else><router-link to="" class="fa fa-sign-out-alt">Logout</router-link></button>
 

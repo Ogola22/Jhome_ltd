@@ -33,7 +33,7 @@
                                 <div class="position-relative overflow-hidden">
                                     <a href=""><img class="img-fluid" src="../../../../src/assets/img/property-1.jpg" alt=""></a>
                                     <div
-                                        class="bg-info rounded text-blue position-absolute start-0 top-0 m-4 py-1 px-3"><router-link to="/propertyDetails">
+                                        class="bg-info rounded text-blue position-absolute start-0 top-0 m-4 py-1 px-3"><router-link :to="'/propertyDetails/' + properties.id">
                                             View
                                         </router-link></div>
                                         

@@ -63,7 +63,6 @@ export default {
   },
   methods: {
     register() {
-      //alert(response.data)
       this.userStore.user = this.user;
       this.userStore.registerUser();
       this.$router.replace('/login');

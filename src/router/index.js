@@ -62,9 +62,9 @@ const router = createRouter({
       component: ()=> import('../views/property/AddProperty/Step1.vue')
     },
     {
-      path: '/editProperty',
-      name: 'editProperty',
-      component: ()=> import('../views/property/editProperty.vue')
+      path: '/propertyDetails/:id',
+      name: 'propertyDetails',
+      component: ()=> import('../views/property/PropertyDetails.vue')
     },
     {
       path: '/blogs',

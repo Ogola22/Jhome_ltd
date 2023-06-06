@@ -59,16 +59,17 @@ export default {
             user: {
                 email: "",
                 password: "",
-            }
+            },
+            isLoggedIn: false,
         }
     },
     methods: {
         login() {
             this.userStore.user = this.user;
             this.userStore.loginUser();
+
             this.$router.replace('/');
-        }, 
-        
+        },
     },
 
 
