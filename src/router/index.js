@@ -47,7 +47,7 @@ const router = createRouter({
       component: ()=> import('../views/users/userProfile.vue')
     },
     {
-      path: '/agentDetails',
+      path: '/agentDetails/:id',
       name: 'agentDetails',
       component: ()=> import('../views/Agents/AgentDetail.vue')
     },

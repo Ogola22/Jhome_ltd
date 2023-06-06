@@ -8,7 +8,7 @@
                     Get in touch with them to know more about Jhomes.</p>
             </div>
             <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s" v-for="agent in agent" :key="agent.id">
                     <div class="team-item rounded overflow-hidden">
                         <div class="position-relative">
                             <img class="img-fluid" src="../../src/assets/img/team-5.jpg" alt="">
@@ -19,56 +19,8 @@
                             </div>
                         </div>
                         <div class="text-center p-4 mt-3">
-                            <h5 class="fw-bold mb-0">Brian Ogola</h5>
-                            <router-link to="/agentDetails" class="nav-item nav-link">View Agent Details</router-link>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item rounded overflow-hidden">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="../../../src/assets/img/team-5.jpg" alt="">
-                            <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4 mt-3">
-                            <h5 class="fw-bold mb-0">Brian Ogola</h5>
-                            <router-link to="/agentDetails" class="nav-item nav-link">View Agent Details</router-link>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item rounded overflow-hidden">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="../../../src/assets/img/team-5.jpg" alt="">
-                            <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4 mt-3">
-                            <h5 class="fw-bold mb-0">Brian Ogola</h5>
-                            <router-link to="/agentDetails" class="nav-item nav-link">View Agent Details</router-link>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item rounded overflow-hidden">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="../../../src/assets/img/team-5.jpg" alt="">
-                            <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4 mt-3">
-                            <h5 class="fw-bold mb-0">Brian Ogola</h5>
-                            <router-link to="/agentDetails" class="nav-item nav-link">View Agent Details</router-link>
+                            <h5 class="fw-bold mb-0">{{ agent.fName }} {{ agent.lName }}</h5>
+                            <router-link :to="'/agentDetails/' + agent.id" class="nav-item nav-link">View Agent Details</router-link>
                         </div>
                     </div>
                 </div>
@@ -83,7 +35,7 @@
 
 <script>
 export default {
-    props: ["agents"]
+    props: ["agent"]
 }
 </script>
 
