@@ -20,9 +20,15 @@
                         </div>
                         <div class="accountContent">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><h5>Phone</h5>{{ user.phone }}</li>
-                                <li class="list-group-item"><h5>Email</h5> {{ user.email }}</li>
-                                <li class="list-group-item"><h5>Gender</h5> {{ user.gender }}</li>
+                                <li class="list-group-item">
+                                    <h5>Phone</h5>{{ user.phone }}
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>Email</h5> {{ user.email }}
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>Gender</h5> {{ user.gender }}
+                                </li>
                             </ul>
                             <ul class="list-unstyled socialNetworks profileColumnSocial">
                                 <li><a href="javascript:void(0)" tabindex="0"><i class="fab fa-facebook-f"></i></a></li>
@@ -37,6 +43,7 @@
                     <!-- accountData -->
                     <div class="accountData">
                         <form @submit.prevent="updateUser()">
+                            <error style="font-size: smaller; margin: 2;" v-if="error" :error="error" />
                             <div class="head">
                                 <h4 class="fontNeuron">Account Settings</h4>
                             </div>
@@ -59,9 +66,19 @@
                                         <input type="tel" class="form-control" v-model="user.phone">
                                     </div>
                                     <div class="form-group">
+                                        <label for="itemN-3"><i class="fa fa-angellist" aria-hidden="true"></i></label>
+                                        <input type="tel" class="form-control" v-model="user.age">
+                                    </div>
+                                    <select data-placeholder="Select Option" class="form-control show-tick m-2"
+                                        id="itemN-23" v-model="user.gender">
+                                        <option value="">-- Gender --</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <div class="form-group">
                                         <label for="itemN-4">About</label>
-                                        <textarea id="itemN-4" class="form-control"
-                                         v-model="user.about"></textarea>
+                                        <textarea id="itemN-4" class="form-control" v-model="user.about"></textarea>
                                     </div>
                                     <button type="submit" class="btn alighRight btnSecondary buttonL fontNeuron">Update
                                         Profile</button>
@@ -77,7 +94,11 @@
 
 <script>
 import axios from 'axios';
+import Error from '../../components/ErrorComponent.vue';
 export default {
+    components: {
+        Error
+    },
     data() {
         return {
             user: {
@@ -88,7 +109,8 @@ export default {
                 phone: '',
                 age: '',
                 role: '',
-                gender: ''
+                gender: '',
+                error: ''
             },
         };
     },
@@ -116,14 +138,16 @@ export default {
                         gender: "",
                         age: "",
                         about: "",
+                        error: ""
+                      
                     };
                 });
                 this.$router.replace("/")
             } catch (e) {
-                this.error = 'Login to perform this action'
+                this.error = 'All fields are Required'
             }
 
-           
+
         }
     }
 
@@ -144,5 +168,4 @@ export default {
 .avatar-placeholder {
     font-size: 48px;
     color: #757575;
-}
-</style>
+}</style>

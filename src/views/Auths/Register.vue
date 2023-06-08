@@ -114,7 +114,7 @@ export default {
         });
 
         console.log(response)
-        this.$router.push('/login');
+        this.$router.push('/');
       } catch (e) {
         this.error = 'Enter correct detail, ensure to use strong password'
       }
