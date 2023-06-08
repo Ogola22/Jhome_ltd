@@ -4,19 +4,44 @@
       <div class="col-left">
         <div class="login-form">
           <h2>Register</h2>
-          <form @submit.prevent="register()">
+          <form @submit.prevent="handleSubmit()">
+            <error v-if="error" :error="error" />
             <p>
-              <input type="text" placeholder="Name" required v-model="user.name">
+              <input type="text" placeholder="First Name" required v-model="name">
             </p>
             <p>
-              <input type="email" placeholder="Email" required v-model="user.email">
+              <input type="text" placeholder="Last Name" required v-model="lName">
             </p>
             <p>
-              <input type="password" placeholder="Password" required v-model="user.password">
+              <input type="email" placeholder="Email" required v-model="email">
             </p>
             <p>
-              <input type="password" placeholder="Confirm password" required v-model="user.password_confirmation">
+              <input :type="inputType" placeholder="Password" required v-model="password">
+              <i class="password-toggle-icon" :class="toggleIconClass" @click="togglePasswordVisibility"></i>
             </p>
+            <p>
+              <input :type="inputType" placeholder="Confirm password" required v-model="password_confirmation">
+              <i class="password-toggle-icon" :class="toggleIconClass" @click="togglePasswordVisibility"></i>
+            </p>
+            <p>
+              <input type="text" placeholder="Phone Number" required v-model="phone">
+            </p>
+            <p>
+              <input type="text" placeholder="Age" required v-model="age">
+            </p>
+            <select data-placeholder="Select Option" class="form-control show-tick m-2" id="itemN-23" v-model="role">
+              <option value="">-- Role --</option>
+              <option value="1">Agent</option>
+              <option value="2">Client</option>
+            </select>
+            <select data-placeholder="Select Option" class="form-control show-tick m-2" id="itemN-23" v-model="gender">
+              <option value="">-- Gender --</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+            <textarea rows="4" class="form-control no-resize m-2" placeholder="Biography"
+              v-model="about"></textarea>
             <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-3">
                 <button class="btn btn-primary">Register</button>
@@ -42,34 +67,64 @@
 </template>
 
 <script>
-import { useAuthStore } from '../../stores/auth';
+import axios from 'axios';
+import Error from '../../components/ErrorComponent.vue';
 export default {
-  setup() {
-    let userStore = useAuthStore();
-    return {
-      userStore
-    };
-
+  components: {
+    Error
   },
   data() {
     return {
-      user:{
-        name: "",
-        email: "",
-        password: "",
-        password_confirmation: "",
-       }
+      name: '',
+      email: '',
+      password: '',
+      password_confirmation: '',
+      lName: '',
+      about: '',
+      phone: '',
+      age: '',
+      role: '',
+      gender: '',
+      error: '',
+      showPassword: false,
     }
   },
-  methods: {
-    register() {
-      this.userStore.user = this.user;
-      this.userStore.registerUser();
-      this.$router.replace('/login');
+  computed: {
+    inputType() {
+      return this.showPassword ? 'text' : 'password';
+    },
+    toggleIconClass() {
+      return this.showPassword ? 'fa fa-eye-slash' : 'fa fa-eye';
     },
   },
+  methods: {
+    async handleSubmit() {
+      try {
+        const response = await axios.post('register', {
+          name: this.name,
+          email: this.email,
+          lName: this.lName,
+          about: this.about,
+          phone: this.phone,
+          age: this.age,
+          role: this.role,
+          gender: this.gender,
+          password: this.password,
+          password_confirmation: this.password_confirmation
+        });
 
-};
+        console.log(response)
+        this.$router.push('/login');
+      } catch (e) {
+        this.error = 'Enter correct detail, ensure to use strong password'
+      }
+
+    },
+    togglePasswordVisibility() {
+      this.showPassword = !this.showPassword;
+    },
+  },
+}
 </script>
 
 <style>

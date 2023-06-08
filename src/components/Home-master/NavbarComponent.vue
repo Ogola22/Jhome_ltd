@@ -57,18 +57,20 @@
               <router-link to="/contact" class="nav-item nav-link"
                 >Contact</router-link
               >
-              <router-link to="/login" class="nav-item nav-link" v-if="!userStore.token">Login </router-link>
-              <router-link to="/register" class="nav-item nav-link" v-if="!userStore.token">Register</router-link>
+              <router-link to="/login" class="nav-item nav-link" v-if="!user">Login </router-link>
+              <router-link to="/register" class="nav-item nav-link" v-if="!user">Register</router-link>
               
-              <button class="dropdown-item" @click="userStore.logoutUser" v-else><router-link to="" class="fa fa-sign-out-alt">Logout</router-link></button>
+              <button class="dropdown-item" v-if="user" @click="handleLogout"><router-link to="" class="fa fa-sign-out-alt">Logout</router-link></button>
 
               <div class="nav-item dropdown">
                 <div class="nav-link dropdown-toggle" data-bs-toggle="dropdown" ><i class="far fa-user"></i></div>
                 
                 <div class="dropdown-menu rounded-0 m-0">
-                  
-                  <router-link to="" class="dropdown-item mb-3" v-if="user">Hi, <span>{{ user.name }}</span></router-link>
-                  <router-link to="/profile" class="dropdown-item mb-3">Account</router-link>
+                  <li  v-if="user">
+                    <router-link :to="'/profile/' + user.id" class="dropdown-item mb-3">Hi, <span>{{ user.name }}</span></router-link>
+                    <router-link to="" class="dropdown-item mb-3">Account</router-link>
+                  </li>
+                 
                   
                 </div>
               </div>
@@ -82,30 +84,30 @@
   </template>
   
   <script>
-  import { useAuthStore } from '../../stores/auth';
-  import axios from 'axios';
-  export default {
-    setup() {
-      let userStore = useAuthStore();
-      return {
-        userStore
-      };
-  
-    },
-    data() {
-      return {
-        user: {
-          name: null,
-          
-        }
+import axios from 'axios';
+export default {
+  props: ["user"],
+  data() {
+    return {
+      user: null
+    }
+  },
+  async created() {
+    const response = await axios.get('user');
+
+    this.user = response.data
+    
+  },
+  methods: {
+    async handleLogout() {
+      if (confirm('Are you sure to Logout?')) {
+        localStorage.removeItem('token');
       }
-    },
-    async created() {
-      const response = await axios.get('user');
-      this.user = response.data;
-    },
+    }
+    
+  },
   
-  };
+}
   </script>
   <style></style>
   

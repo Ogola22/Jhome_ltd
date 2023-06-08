@@ -71,6 +71,45 @@
                         </form>
                 </div>
             </div>
+            <div class="accountData mt-3">
+                        <form>
+                            <div class="head">
+                                <h4 class="fontNeuron">Social Profiles</h4>
+                            </div>
+                            <div class="accountHolder">
+                                <div class="accountContent">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                            <div class="form-group">
+                                                <label for="itemN-8">Facebook URL</label>
+                                                <p style="color:blue;">{{ agent.facebook }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <div class="form-group">
+                                                <label for="itemN-9">Twitter URL</label>
+                                                <p style="color:blue;">{{ agent.tweeter }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                            <div class="form-group">
+                                                <label for="itemN-10">Linkedin URL</label>
+                                                <p style="color:blue;">{{ agent.linkedin }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label for="itemN-11">Instagram URL</label>
+                                                <p style="color:blue;">{{ agent.instagram }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
         </div>
     </div>
 </section>

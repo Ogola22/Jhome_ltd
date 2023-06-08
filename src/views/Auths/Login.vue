@@ -1,25 +1,19 @@
 <template>
-    <div class="wrapper1 login-2">
+    <div class="wrapper1 login-2 m-5">
         <div class="container1">
             <div class="col-left">
                 <div class="login-form">
                     <h2>Login</h2>
-                    <form @submit.prevent="login()">
+                    <form @submit.prevent="handleLogin">
+                        <error style="font-size: smaller;" v-if="error" :error="error" />
                         <p>
-                            <input 
-                            type="email" placeholder="Email" required
-                            name="email"
-                            v-model="user.email"
-                            >
+                            <input type="email" placeholder="Email" required name="email" v-model="email">
                         </p>
                         <p>
-                            <input 
-                            type="password" placeholder="Password" required
-                            name="password"
-                            v-model="user.password"
-                           
-                            >
+                            <input :type="inputType" placeholder="Password" required v-model="password">
+                            <i class="password-toggle-icon" :class="toggleIconClass" @click="togglePasswordVisibility"></i>
                         </p>
+
                         <p>
                             <input class="btn" type="submit" value="Sing In" />
                         </p>
@@ -46,33 +40,46 @@
 </template>
 
 <script>
-import { useAuthStore } from '../../stores/auth';
+import axios from 'axios';
+import Error from '../../components/ErrorComponent.vue';
 export default {
-    setup(){
-        let userStore=useAuthStore();
-        return {
-            userStore
-        };
-     },
+    components: {
+        Error
+    },
     data() {
         return {
-            user: {
-                email: "",
-                password: "",
-            },
-            isLoggedIn: false,
+            email: '',
+            password: '',
+            error: '',
+            showPassword: false,
         }
     },
-    methods: {
-        login() {
-            this.userStore.user = this.user;
-            this.userStore.loginUser();
-
-            this.$router.replace('/');
+    computed: {
+        inputType() {
+            return this.showPassword ? 'text' : 'password';
+        },
+        toggleIconClass() {
+            return this.showPassword ? 'fa fa-eye-slash' : 'fa fa-eye';
         },
     },
+    methods: {
+        async handleLogin() {
+            try {
+                const response = await axios.post('login', {
+                    email: this.email,
+                    password: this.password,
+                });
 
-
+                localStorage.setItem('token', response.data.token);
+                this.$router.push('/');
+            } catch (e) {
+                this.error = 'Inavalid username/password'
+            }
+        },
+        togglePasswordVisibility() {
+            this.showPassword = !this.showPassword;
+        },
+    },
 };
 </script>
 

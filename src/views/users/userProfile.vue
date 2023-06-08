@@ -1,6 +1,6 @@
 <template>
     <!-- content -->
-    <section id="content" class="container pabIndent">
+    <section id="content" class="container pabIndent m-3">
         <!-- userProfile -->
         <div class="userProfile">
             <div class="row">
@@ -8,182 +8,63 @@
                     <!-- profileSidebar -->
                     <aside class="profileSidebar">
                         <header class="head">
-                            <div class="imgProfile">
-                                <img src="../../../src/assets/img/team-5.jpg" alt="" width="74" height="74">
-                            </div>
-                            <div class="info">
-                                <span class="text">{{ user }}</span>
-                                <span class="text"><a href="#" class="link">Change Password</a></span>
+                            <div class="avatar-container">
+                                <div class="avatar-placeholder">
+                                    <i class="fas fa-user"></i>
+                                    <img src="" alt="">
+                                </div>
                             </div>
                         </header>
-                        <ul class="navUser list-unstyled">
-                            <li>
-                                <a href="#">
-                                    <i class="far fa-user"></i>
-                                    <span>Account Settings</span>
-                                </a>
-                            </li>
-                            <li>
-                                <router-link to="/myProperties">
-                                    <i class="far fa-heart"></i>
-                                    <span>Properties</span>
-                                </router-link>
-                            </li>
-                            <li>
-                                <router-link to="/addProperty">
-                                    <i class="fa fa-plus"></i>
-                                    <span>Submit Property</span>
-                                </router-link>
-                            
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-sign-out-alt"></i>
-                                    <span>Logout</span>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="head">
+                            <h4 class="fontNeuron">{{ user.name }} {{ user.lName }}</h4>
+                        </div>
+                        <div class="accountContent">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><h5>Phone</h5>{{ user.phone }}</li>
+                                <li class="list-group-item"><h5>Email</h5> {{ user.email }}</li>
+                                <li class="list-group-item"><h5>Gender</h5> {{ user.gender }}</li>
+                            </ul>
+                            <ul class="list-unstyled socialNetworks profileColumnSocial">
+                                <li><a href="javascript:void(0)" tabindex="0"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="javascript:void(0)" tabindex="0"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="javascript:void(0)" tabindex="0"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="javascript:void(0)" tabindex="0"><i class="fab fa-google"></i></a></li>
+                            </ul>
+                        </div>
                     </aside>
                 </div>
                 <div class="col-xs-12 col-sm-8 col-lg-9">
                     <!-- accountData -->
                     <div class="accountData">
-                        <form>
+                        <form @submit.prevent="updateUser()">
                             <div class="head">
                                 <h4 class="fontNeuron">Account Settings</h4>
                             </div>
                             <div class="accountHolder">
-                                <div class="imgProfile">
-                                    <div class="imgThumbnail">
-                                        <img src="../../../src/assets/img/team-5.jpg" alt="" width="200" height="200">
-                                        <div class="btnArea">
-                                            <a href="#" class="btn btn-info"><i class="fa fa-upload"></i> Upload Photo</a>
-                                        </div>
-                                    </div>
-                                    <span class="text text-center">*minimum 200px x 200px</span>
-                                </div>
                                 <div class="accountContent">
                                     <div class="form-group">
-                                        <label for="itemN-1">Full Name</label>
-                                        <input type="text" class="form-control" placeholder="Enter your name" id="itemN-1">
+                                        <label for="itemN-1">First Name</label>
+                                        <input type="text" class="form-control" v-model="user.name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="itemN-1">Last Name</label>
+                                        <input type="text" class="form-control" v-model="user.lName">
                                     </div>
                                     <div class="form-group">
                                         <label for="itemN-2">Email</label>
-                                        <input type="email" class="form-control" placeholder="Enter Email"
-                                            id="itemN-2">
+                                        <input type="email" class="form-control" v-model="user.email">
                                     </div>
                                     <div class="form-group">
                                         <label for="itemN-3">Phone</label>
-                                        <input type="tel" class="form-control" placeholder="Enter Phone number" id="itemN-3">
+                                        <input type="tel" class="form-control" v-model="user.phone">
                                     </div>
                                     <div class="form-group">
-                                        <label for="itemN-4">Biography</label>
+                                        <label for="itemN-4">About</label>
                                         <textarea id="itemN-4" class="form-control"
-                                            placeholder="Write a brief biography about yourself"></textarea>
+                                         v-model="user.about"></textarea>
                                     </div>
                                     <button type="submit" class="btn alighRight btnSecondary buttonL fontNeuron">Update
                                         Profile</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- accountData -->
-                    <div class="accountData">
-                        <form>
-                            <div class="head">
-                                <h4 class="fontNeuron">Change Password</h4>
-                            </div>
-                            <div class="accountHolder">
-                                <div class="accountContent">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-md-6">
-                                            <div class="form-group">
-                                                <label for="itemN-5">Current Password</label>
-                                                <input type="password" class="form-control"
-                                                    placeholder="Enter your current password" id="itemN-5">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12 col-md-6">
-                                            <div class="form-group">
-                                                <label for="itemN-6">New Password</label>
-                                                <input type="password" class="form-control" placeholder="Enter new password"
-                                                    id="itemN-6">
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-md-6">
-                                            <div class="form-group">
-                                                <label for="itemN-7">Confirm New Password</label>
-                                                <input type="password" class="form-control" placeholder="Confirm new password"
-                                                    id="itemN-7">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="submit" class="btn alighRight btnSecondary buttonL fontNeuron">Change
-                                        Password</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- accountData -->
-                    <div class="accountData">
-                        <form>
-                            <div class="head">
-                                <h4 class="fontNeuron">Social Profiles</h4>
-                            </div>
-                            <div class="accountHolder">
-                                <div class="accountContent">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-md-6">
-                                            <div class="form-group">
-                                                <label for="itemN-8">Facebook URL</label>
-                                                <input type="text" class="form-control"
-                                                    id="itemN-8">
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-md-6">
-                                            <div class="form-group">
-                                                <label for="itemN-9">Twitter URL</label>
-                                                <input type="text" class="form-control"
-                                                    id="itemN-9">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12 col-md-6">
-                                            <div class="form-group">
-                                                <label for="itemN-10">Linkedin URL</label>
-                                                <input type="text" class="form-control" 
-                                                    id="itemN-10">
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-6">
-                                            <div class="form-group">
-                                                <label for="itemN-11">Instagram URL</label>
-                                                <input type="text" class="form-control"
-                                                    id="itemN-11">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12 col-md-6">
-                                            <div class="form-group">
-                                                <label for="itemN-12">Google Plus URL</label>
-                                                <input type="text" class="form-control"
-                                                    id="itemN-12">
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-md-6">
-                                            <div class="form-group">
-                                                <label for="itemN-13">Skype</label>
-                                                <input type="text" class="form-control"
-                                                    id="itemN-13">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="submit" class="btn alighRight btnSecondary buttonL fontNeuron">Save
-                                        Changes</button>
                                 </div>
                             </div>
                         </form>
@@ -195,11 +76,73 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
+    data() {
+        return {
+            user: {
+                name: '',
+                email: '',
+                lName: '',
+                about: '',
+                phone: '',
+                age: '',
+                role: '',
+                gender: ''
+            },
+        };
+    },
+    created() {
+        this.getUser();
+    },
+    methods: {
+        async getUser() {
+            let id = this.$route.params.id;
+            await axios.get(`user/${id}`).then((res) => {
+                this.user = res.data;
+                console.log(res.data)
+            });
+        },
+        async updateUser() {
+            try {
+                let id = this.$route.params.id;
+                await axios.put(`user/${id}`, this.user).then((res) => {
+                    alert(res.data);
+                    this.user = {
+                        name: "",
+                        lName: "",
+                        email: "",
+                        phone: "",
+                        gender: "",
+                        age: "",
+                        about: "",
+                    };
+                });
+                this.$router.replace("/")
+            } catch (e) {
+                this.error = 'Login to perform this action'
+            }
+
+           
+        }
+    }
 
 }
 </script>
 
 <style>
+.avatar-container {
+    width: 100px;
+    height: 100px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.avatar-placeholder {
+    font-size: 48px;
+    color: #757575;
+}
 </style>
