@@ -14,8 +14,11 @@
                         Welcome to Jhome Realty, where finding your dream home is our top
                         priority.
                     </p>
-                    <router-link to="/register" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Join us
+                    <router-link to="/register" class="btn btn-primary py-3 px-5 me-3 animated fadeIn" v-if="!user">Join us
                     </router-link>
+                    <p><router-link to="/" class="btn btn-info animated fadeIn" v-if="user">Thank you {{ user.name }}
+                        for choosing Jhomes.
+                    </router-link></p>
 
                 </div>
 
@@ -31,13 +34,13 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="5000">
-                            <img class="img-fluid" src="../../src/assets/img/carousel-6.JPG" alt="" />                                                 
+                            <img class="img-fluid" src="../../src/assets/img/carousel-2.JPG" alt="" />                                                 
                             <div class="carousel-caption d-none d-md-block">
                                 <h5 style="color: aliceblue;">Amaizing Proerties In Nairobi</h5>
                             </div>
                         </div>
                         <div class="carousel-item" data-bs-interval="5000">
-                            <img class="img-fluid" src="../../src/assets/img/carousel-2.jpg" alt="" />
+                            <img class="img-fluid" src="../../src/assets/img/carousel-6.jpg" alt="" />
                             <div class="carousel-caption d-none d-md-block">
                                 <h5 style="color: aliceblue;">Properties In Mombasa</h5>
                             </div>
@@ -66,7 +69,7 @@
 
     </div>
     <div class="container-xxl py-5">
-        <div class="container">
+        <div class="container m-3">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                     <div class="about-img position-relative overflow-hidden p-5 pe-0">
@@ -636,7 +639,18 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
+    prop: ["user"],
+    data() {
+        return {
+            user: null
+        }
+    },
+    async created() {
+    const response = await axios.get('user');
+    this.user = response.data
+  },
 
 }
 </script>

@@ -31,12 +31,8 @@
                         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s"  v-for="properties in properties" :key="properties.id">
                             <div class="property-item rounded overflow-hidden">
                                 <div class="position-relative overflow-hidden">
-                                    <a href=""><img class="img-fluid" src="../../../../src/assets/img/property-1.jpg" alt=""></a>
-                                    <div
-                                        class="bg-info rounded text-blue position-absolute start-0 top-0 m-4 py-1 px-3"><router-link :to="'/propertyDetails/' + properties.id">
-                                            View
-                                        </router-link></div>
-                                        
+                                    <router-link :to="'/propertyDetails/' + properties.id" v-if="user"><img class="img-fluid" src="../../../../src/assets/img/property-1.jpg" alt=""></router-link>
+                                    <router-link to="/login" v-if="!user"><img class="img-fluid" src="../../../../src/assets/img/property-1.jpg" alt=""></router-link>      
                                     <div
                                         class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">
                                         {{ properties.type }}</div>
@@ -66,8 +62,20 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
-    props: ["properties"]
+    props: ["properties", "user"],
+    
+    data() {
+        return {
+           user: null 
+        }
+    },
+    async created() {
+    const response = await axios.get('user');
+    this.user = response.data
+    
+  },
 }
 
 </script>

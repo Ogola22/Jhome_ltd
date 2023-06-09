@@ -13,14 +13,15 @@
                         <div class="position-relative">
                             <img class="img-fluid" src="../../src/assets/img/team-5.jpg" alt="">
                             <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square mx-1" href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square mx-1" href="javascript:void(0)"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square mx-1" href="javascript:void(0)"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                         <div class="text-center p-4 mt-3">
                             <h5 class="fw-bold mb-0">{{ agent.fName }} {{ agent.lName }}</h5>
-                            <router-link :to="'/agentDetails/' + agent.id" class="nav-item nav-link">View Agent Details</router-link>
+                            <router-link :to="'/agentDetails/' + agent.id" class="nav-item nav-link" v-if="user">View Agent Details</router-link>
+                            <router-link to="/login" class="nav-item nav-link" v-if="!user">View Agent Details</router-link>
                         </div>
                     </div>
                 </div>
@@ -34,8 +35,19 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
-    props: ["agent"]
+    props: ["agent", "user"],
+
+    data() {
+        return {
+        user: null
+       } 
+    },
+    async created() {
+        const response = await axios.get('user');
+        this.user = response.data
+    }
 }
 </script>
 

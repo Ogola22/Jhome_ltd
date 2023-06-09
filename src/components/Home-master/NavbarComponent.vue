@@ -60,7 +60,7 @@
               <router-link to="/login" class="nav-item nav-link" v-if="!user">Login </router-link>
               <router-link to="/register" class="nav-item nav-link" v-if="!user">Register</router-link>
               
-              <button class="dropdown-item" v-if="user" @click="handleLogout"><router-link to="" class="fa fa-sign-out-alt">Logout</router-link></button>
+              <button class="dropdown-item" v-if="user" @click="handleClick"><router-link to="" class="fa fa-sign-out-alt">Logout</router-link></button>
 
               <div class="nav-item dropdown">
                 <div class="nav-link dropdown-toggle" data-bs-toggle="dropdown" ><i class="far fa-user"></i></div>
@@ -89,22 +89,28 @@ export default {
   props: ["user"],
   data() {
     return {
-      user: null
+      user: null,
+      currentTime: new Date().toLocaleTimeString()
     }
   },
   async created() {
     const response = await axios.get('user');
-
     this.user = response.data
     
   },
   methods: {
+      async handleClick() {
+      this.handleLogout();
+      this.refreshPage();
+    },
     async handleLogout() {
       if (confirm('Are you sure to Logout?')) {
         localStorage.removeItem('token');
       }
-    }
-    
+    },
+    async refreshPage() {
+      location.reload();
+    },
   },
   
 }

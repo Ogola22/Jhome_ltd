@@ -21,7 +21,7 @@
             <!-- tabs -->
             <section class="container">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12">
+                    <div class="col-xs-8 col-sm-8">
                         <div class="tabSetholder tabschanges">
                             <div class="tab-content">
                                 <div id="tab1-0">
@@ -29,7 +29,7 @@
                                         <div>
                                             <div class="imgHolder">
                                                 <a href="#">
-                                                    <img src="../../../../src/assets/img/property-1.jpg" alt="image description">
+                                                    <img src="../../../../src/assets/img/property-1.jpg" alt="">
                                                 </a>
                                             </div>
                                         </div>
