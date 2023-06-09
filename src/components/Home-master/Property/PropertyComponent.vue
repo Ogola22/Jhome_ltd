@@ -1,5 +1,4 @@
 <template>
-
     <!-- Property List Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -7,8 +6,9 @@
                 <div class="col-lg-6">
                     <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
                         <h1 class="mb-3">Property Listing</h1>
-                        <p>Welcome to Jhomes Ltd, your trusted real estate agency. 
-                            We are a team of experienced real estate professionals dedicated to helping you find your dream home, sell your property or invest in real estate.</p>
+                        <p>Welcome to Jhomes Ltd, your trusted real estate agency.
+                            We are a team of experienced real estate professionals dedicated to helping you find your dream
+                            home, sell your property or invest in real estate.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
@@ -28,14 +28,19 @@
             <div class="tab-content">
                 <div id="tab-1" class="tab-pane fade show p-0 active">
                     <div class="row g-4">
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s"  v-for="properties in properties" :key="properties.id">
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" v-for="properties in properties"
+                            :key="properties.id">
                             <div class="property-item rounded overflow-hidden">
-                                <div class="position-relative overflow-hidden">
-                                    <router-link :to="'/propertyDetails/' + properties.id" v-if="user"><img class="img-fluid" src="../../../../src/assets/img/property-1.jpg" alt=""></router-link>
-                                    <router-link to="/login" v-if="!user"><img class="img-fluid" src="../../../../src/assets/img/property-1.jpg" alt=""></router-link>      
+                                <div class="position-relative overflow-hidden"> 
+                                    <router-link :to="'/propertyDetails/' + properties.id" v-if="user"><img
+                                            class="img-fluid" src="../../../../src/assets/img/property-1.jpg" 
+                                            alt=""></router-link>
+                                    <router-link to="/login" v-if="!user"><img class="img-fluid"
+                                            src="../../../../src/assets/img/property-1.jpg" alt=""></router-link>
                                     <div
                                         class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">
-                                        {{ properties.type }}</div>
+                                        {{ properties.type }}
+                                    </div>
                                 </div>
                                 <div class="p-4 pb-0">
                                     <h5 class="text-primary mb-3">{{ properties.price }}</h5>
@@ -44,7 +49,8 @@
                                 </div>
                                 <div class="d-flex border-top">
                                     <small class="flex-fill text-center border-end py-2"><i
-                                            class="fa fa-ruler-combined text-primary me-2"></i>{{ properties.size }} m<sup>2</sup></small>
+                                            class="fa fa-ruler-combined text-primary me-2"></i>{{ properties.size }}
+                                        m<sup>2</sup></small>
                                     <small class="flex-fill text-center border-end py-2"><i
                                             class="fa fa-bed text-primary me-2"></i>{{ properties.bedroom }}</small>
                                     <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>
@@ -65,17 +71,17 @@
 import axios from 'axios';
 export default {
     props: ["properties", "user"],
-    
+
     data() {
         return {
-           user: null 
+            user: null
         }
     },
     async created() {
-    const response = await axios.get('user');
-    this.user = response.data
-    
-  },
+        const response = await axios.get('user');
+        this.user = response.data
+
+    },
 }
 
 </script>

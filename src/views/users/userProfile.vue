@@ -36,6 +36,7 @@
                                 <li><a href="javascript:void(0)" tabindex="0"><i class="fab fa-instagram"></i></a></li>
                                 <li><a href="javascript:void(0)" tabindex="0"><i class="fab fa-google"></i></a></li>
                             </ul>
+                            <a href="javascript:void(0)" tabindex="0"><li class="list-group-item" @click="deleteUser(user.id)">Close account</li></a>
                         </div>
                     </aside>
                 </div>
@@ -146,8 +147,14 @@ export default {
             } catch (e) {
                 this.error = 'All fields are Required'
             }
-
-
+        },
+        async deleteUser(id) {
+            if (confirm("We are sad to see you leaving, Click Ok to close or Cancel the process")) {
+                await axios.delete(`user/${id}`).then(res => {
+                    console.log(res)
+                })
+                
+            }this.$router.push("/")
         }
     }
 
