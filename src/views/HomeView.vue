@@ -40,7 +40,7 @@
                             </div>
                         </div>
                         <div class="carousel-item" data-bs-interval="5000">
-                            <img class="img-fluid" src="../../src/assets/img/carousel-6.jpg" alt="" />
+                            <img class="img-fluid" src="../../src/assets/img/carousel-1.jpg" alt="" />
                             <div class="carousel-caption d-none d-md-block">
                                 <h5 style="color: aliceblue;">Properties In Mombasa</h5>
                             </div>
