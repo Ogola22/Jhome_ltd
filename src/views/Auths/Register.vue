@@ -31,8 +31,8 @@
             </p>
             <select data-placeholder="Select Option" class="form-control show-tick m-2" id="itemN-23" v-model="role">
               <option value="">-- Role --</option>
-              <option value="1">Agent</option>
-              <option value="2">Client</option>
+              <option value="Agent">Agent</option>
+              <option value="Client">Client</option>
             </select>
             <select data-placeholder="Select Option" class="form-control show-tick m-2" id="itemN-23" v-model="gender">
               <option value="">-- Gender --</option>

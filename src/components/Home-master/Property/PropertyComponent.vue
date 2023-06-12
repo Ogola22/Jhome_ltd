@@ -35,8 +35,11 @@
                                     <router-link :to="'/propertyDetails/' + properties.id" v-if="user"><img
                                             class="img-fluid" src="../../../../src/assets/img/property-1.jpg" 
                                             alt=""></router-link>
+                                            <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">{{ properties.property_for }}</div>
                                     <router-link to="/login" v-if="!user"><img class="img-fluid"
-                                            src="../../../../src/assets/img/property-1.jpg" alt=""></router-link>
+                                            src="../../../../src/assets/img/property-1.jpg" alt="img">
+                                        </router-link>
+                                            
                                     <div
                                         class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">
                                         {{ properties.type }}

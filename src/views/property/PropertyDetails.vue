@@ -7,7 +7,7 @@
                 <header class="contentFiltersHeadingWrap row">
                     <div class="col-xs-12 col col-sm-8">
                         <h1 class="fontNeuron">{{property.title}}<a href="#"
-                                class="btn btnSmall btn-success fontBase">For Sale</a></h1>
+                                class="btn btnSmall btn-success fontBase">{{ property.property_for }}</a></h1>
                         <!-- captionAddress -->
                         <address class="captionAddress">
                             <p>{{ property.location }}</p>
@@ -30,6 +30,7 @@
                                             <div class="imgHolder">
                                                 <a href="#">
                                                     <img src="../../../../src/assets/img/property-1.jpg" alt="">
+                                                    
                                                 </a>
                                             </div>
                                         </div>
@@ -172,8 +173,9 @@ export default {
                 bathroom: "",
                 size: "",
                 type: "",
+                property_for: "",
                 garage: "",
-                image_path: "",
+               
             },
         };
         

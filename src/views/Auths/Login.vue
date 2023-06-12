@@ -15,7 +15,7 @@
                         </p>
 
                         <p>
-                            <input class="btn" type="submit" value="Sing In" />
+                            <input class="btn" type="submit" value="Sign In" />
                         </p>
                         <p>
                             <router-link to="">Forget Password?</router-link>
@@ -52,6 +52,7 @@ export default {
             password: '',
             error: '',
             showPassword: false,
+            currentTime: new Date().toLocaleTimeString()
         }
     },
     computed: {
@@ -63,6 +64,10 @@ export default {
         },
     },
     methods: {
+        async handleClick() {
+            this.handleLogin();
+            this.refreshPage();
+        },
         async handleLogin() {
             try {
                 const response = await axios.post('login', {
@@ -78,6 +83,9 @@ export default {
         },
         togglePasswordVisibility() {
             this.showPassword = !this.showPassword;
+        },
+        async refreshPage() {
+            location.reload();
         },
     },
 };
