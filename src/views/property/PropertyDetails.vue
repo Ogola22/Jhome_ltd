@@ -147,7 +147,7 @@
                                     </div>
                                     <div class="form-group">
                                         <textarea class="form-control"
-                                            placeholder="Hi Jennie Wilson, I saw your profile on LemanHouse and wanted to see if you could help me"></textarea>
+                                            placeholder="Hi, I saw your profile and wanted to see if you could help me"></textarea>
                                     </div>
                                     <button type="submit" class="btn btnDark fontNeuron buttonXL">Submit</button>
                                 </form>
