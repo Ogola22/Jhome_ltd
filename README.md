@@ -27,3 +27,4 @@ npm run dev
 ```sh
 npm run build
 ```
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7cc05f95-5761-45f9-bba6-24a0535b5f06/deploy-status)](https://app.netlify.com/sites/luxury-genie-202d72/deploys)
