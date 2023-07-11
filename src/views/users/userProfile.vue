@@ -36,7 +36,7 @@
                                 <li><a href="javascript:void(0)" tabindex="0"><i class="fab fa-instagram"></i></a></li>
                                 <li><a href="javascript:void(0)" tabindex="0"><i class="fab fa-google"></i></a></li>
                             </ul>
-                            <a href="javascript:void(0)" tabindex="0"><li class="list-group-item" @click="deleteUser(user.id)">Close account</li></a>
+                            <a href="javascript:void(0)" tabindex="0"><li class="list-group-item bg-danger" @click="deleteUser(user.id)">Close account</li></a>
                         </div>
                     </aside>
                 </div>

@@ -81,6 +81,16 @@ const router = createRouter({
       name: 'membership',
       component: ()=> import('../views/MembershipView.vue')
     },
+    {
+      path: '/forgotPassword',
+      name: 'forgotPassword',
+      component: ()=> import('../views/Auths/ForgotPassword.vue')
+    },
+    {
+      path: '/reset/:token',
+      name: 'reset',
+      component:()=> import('../views/Auths/ResetPassword.vue')
+    }
   ]
 })
 export default router

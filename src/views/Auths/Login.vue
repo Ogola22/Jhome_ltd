@@ -18,7 +18,7 @@
                             <input class="btn" type="submit" value="Sign In" />
                         </p>
                         <p>
-                            <router-link to="">Forget Password?</router-link>
+                            <router-link to="/forgotPassword">Forget Password?</router-link>
                         </p>
                         <p>
                             Not created your account yet?<router-link to="/register">Register</router-link>
